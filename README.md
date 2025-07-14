@@ -98,7 +98,7 @@ fitness-app/
 └── README.md              # You are here
 ```
 
-> **Database** – swap‑able: default profile uses in‑memory H2; prod profile points to Postgres.
+> **Database** – Postgres for Users, MongoDB for Activities and AI scripts.
 
 ---
 
