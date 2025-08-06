@@ -1,0 +1,632 @@
+{
+	"info": {
+		"_postman_id": "3e9b7bf8-fd2f-49e4-ba35-c407c3cfc725",
+		"name": "User Service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32640436"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "clientId",
+									"value": "oauth2-pkce-client",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "http://127.0.0.1:8181/realms/fitness-oauth2/protocol/openid-connect/token",
+									"type": "string"
+								},
+								{
+									"key": "authUrl",
+									"value": "http://127.0.0.1:8181/realms/fitness-oauth2/protocol/openid-connect/auth",
+									"type": "string"
+								},
+								{
+									"key": "redirect_uri",
+									"value": "http://localhost:5173",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "authorization_code_with_pkce",
+									"type": "string"
+								},
+								{
+									"key": "tokenName",
+									"value": "fitness-app-token",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-User-ID",
+								"value": "34e0e73c-eb5e-46d6-b44b-1797a567358c",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"abc124@gmail.com\",\n    \"password\": \"abc1@123\",\n    \"firstName\": \"John1\",\n    \"lastName\": \"Doe1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{8080}}/api/users/register",
+							"host": [
+								"{{8080}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get profile",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "clientId",
+									"value": "oauth2-pkce-client",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "http://127.0.0.1:8181/realms/fitness-oauth2/protocol/openid-connect/token",
+									"type": "string"
+								},
+								{
+									"key": "authUrl",
+									"value": "http://127.0.0.1:8181/realms/fitness-oauth2/protocol/openid-connect/auth",
+									"type": "string"
+								},
+								{
+									"key": "redirect_uri",
+									"value": "http://localhost:5173",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "authorization_code_with_pkce",
+									"type": "string"
+								},
+								{
+									"key": "tokenName",
+									"value": "fitness-app-token",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{8080}}/api/users/34e0e73c-eb5e-46d6-b44b-1797a567358c",
+							"host": [
+								"{{8080}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"34e0e73c-eb5e-46d6-b44b-1797a567358c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "validate user",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "clientId",
+									"value": "oauth2-pkce-client",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "http://127.0.0.1:8181/realms/fitness-oauth2/protocol/openid-connect/token",
+									"type": "string"
+								},
+								{
+									"key": "authUrl",
+									"value": "http://127.0.0.1:8181/realms/fitness-oauth2/protocol/openid-connect/auth",
+									"type": "string"
+								},
+								{
+									"key": "redirect_uri",
+									"value": "http://localhost:5173",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "authorization_code_with_pkce",
+									"type": "string"
+								},
+								{
+									"key": "tokenName",
+									"value": "fitness-app-token",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{8080}}/api/users/34e0e73c-eb5e-46d6-b44b-1797a567358c/validate",
+							"host": [
+								"{{8080}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"34e0e73c-eb5e-46d6-b44b-1797a567358c",
+								"validate"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "activity",
+			"item": [
+				{
+					"name": "register Activity",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "clientId",
+									"value": "oauth2-pkce-client",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "http://127.0.0.1:8181/realms/fitness-oauth2/protocol/openid-connect/token",
+									"type": "string"
+								},
+								{
+									"key": "authUrl",
+									"value": "http://127.0.0.1:8181/realms/fitness-oauth2/protocol/openid-connect/auth",
+									"type": "string"
+								},
+								{
+									"key": "redirect_uri",
+									"value": "http://localhost:5173",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "authorization_code_with_pkce",
+									"type": "string"
+								},
+								{
+									"key": "tokenName",
+									"value": "fitness-app-token",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\": \"34e0e73c-eb5e-46d6-b44b-1797a567358c\",\n    \"type\": \"RUNNING\",\n    \"duration\": 30,\n    \"caloriesBurned\": 300,\n    \"startTime\": \"2025-01-12T10:00:00\",\n    \"additionalMetrics\": {\n        \"distance\": 5.2,\n        \"averageSpeed\": 10.4,\n        \"maxHeartRate\": 165\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{8080}}/api/activities",
+							"host": [
+								"{{8080}}"
+							],
+							"path": [
+								"api",
+								"activities"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get user Activities",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "clientId",
+									"value": "oauth2-pkce-client",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "http://127.0.0.1:8181/realms/fitness-oauth2/protocol/openid-connect/token",
+									"type": "string"
+								},
+								{
+									"key": "authUrl",
+									"value": "http://127.0.0.1:8181/realms/fitness-oauth2/protocol/openid-connect/auth",
+									"type": "string"
+								},
+								{
+									"key": "redirect_uri",
+									"value": "http://localhost:5173",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "authorization_code_with_pkce",
+									"type": "string"
+								},
+								{
+									"key": "tokenName",
+									"value": "fitness-app-token",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-User-ID",
+								"value": "34e0e73c-eb5e-46d6-b44b-1797a567358c",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\": \"34e0e73c-eb5e-46d6-b44b-1797a567358c\",\n    \"type\": \"RUNNING\",\n    \"duration\": 30,\n    \"caloriesBurned\": 300,\n    \"startTime\": \"2025-01-12T10:00:00\",\n    \"additionalMetrics\": {\n        \"distance\": 5.2,\n        \"averageSpeed\": 10.4,\n        \"maxHeartRate\": 165\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{8080}}/api/activities",
+							"host": [
+								"{{8080}}"
+							],
+							"path": [
+								"api",
+								"activities"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get user Activities by activity id",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "clientId",
+									"value": "oauth2-pkce-client",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "http://127.0.0.1:8181/realms/fitness-oauth2/protocol/openid-connect/token",
+									"type": "string"
+								},
+								{
+									"key": "authUrl",
+									"value": "http://127.0.0.1:8181/realms/fitness-oauth2/protocol/openid-connect/auth",
+									"type": "string"
+								},
+								{
+									"key": "redirect_uri",
+									"value": "http://localhost:5173",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "authorization_code_with_pkce",
+									"type": "string"
+								},
+								{
+									"key": "tokenName",
+									"value": "fitness-app-token",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{8080}}/api/activities/6869a8106e89ef19c3dc9547",
+							"host": [
+								"{{8080}}"
+							],
+							"path": [
+								"api",
+								"activities",
+								"6869a8106e89ef19c3dc9547"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Recommendations",
+			"item": [
+				{
+					"name": "Get user Recommendation",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "clientId",
+									"value": "oauth2-pkce-client",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "http://127.0.0.1:8181/realms/fitness-oauth2/protocol/openid-connect/token",
+									"type": "string"
+								},
+								{
+									"key": "authUrl",
+									"value": "http://127.0.0.1:8181/realms/fitness-oauth2/protocol/openid-connect/auth",
+									"type": "string"
+								},
+								{
+									"key": "redirect_uri",
+									"value": "http://localhost:5173",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "authorization_code_with_pkce",
+									"type": "string"
+								},
+								{
+									"key": "tokenName",
+									"value": "fitness-app-token",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/recommendations/user/687427d87e2dd4384644cf83",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"recommendations",
+								"user",
+								"687427d87e2dd4384644cf83"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get activity Recommendation",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "clientId",
+									"value": "oauth2-pkce-client",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "http://127.0.0.1:8181/realms/fitness-oauth2/protocol/openid-connect/token",
+									"type": "string"
+								},
+								{
+									"key": "authUrl",
+									"value": "http://127.0.0.1:8181/realms/fitness-oauth2/protocol/openid-connect/auth",
+									"type": "string"
+								},
+								{
+									"key": "redirect_uri",
+									"value": "http://localhost:5173",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "authorization_code_with_pkce",
+									"type": "string"
+								},
+								{
+									"key": "tokenName",
+									"value": "fitness-app-token",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8083/api/recommendations/activity/687427d87e2dd4384644cf83",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"recommendations",
+								"activity",
+								"687427d87e2dd4384644cf83"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Gemini Api",
+			"item": [
+				{
+					"name": "Gemini api",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "X-goog-api-key",
+								"value": "GEMINI_API_KEY"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"contents\": [\n      {\n        \"parts\": [\n          {\n            \"text\": \"Explain how AI works in a few words\"\n          }\n        ]\n      }\n    ]\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=put your api key here",
+							"protocol": "https",
+							"host": [
+								"generativelanguage",
+								"googleapis",
+								"com"
+							],
+							"path": [
+								"v1beta",
+								"models",
+								"gemini-2.0-flash:generateContent"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "your api key here"
+								}
+							]
+						},
+						"description": "Generated from cURL: curl \"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent\" \\\n  -H 'Content-Type: application/json' \\\n  -H 'X-goog-api-key: GEMINI_API_KEY' \\\n  -X POST \\\n  -d '{\n    \"contents\": [\n      {\n        \"parts\": [\n          {\n            \"text\": \"Explain how AI works in a few words\"\n          }\n        ]\n      }\n    ]\n  }'"
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "8082",
+			"value": "http://localhost:8082",
+			"type": "default"
+		},
+		{
+			"key": "8081",
+			"value": "http://localhost:8081",
+			"type": "default"
+		}
+	]
+}
